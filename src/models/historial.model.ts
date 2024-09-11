@@ -1,4 +1,5 @@
-import {Entity, model, property} from '@loopback/repository';
+import {Entity, model, property, belongsTo} from '@loopback/repository';
+import {Centros} from './centros.model';
 
 @model()
 export class Historial extends Entity {
@@ -8,13 +9,6 @@ export class Historial extends Entity {
     generated: true,
   })
   id?: string;
-
-  @property({
-    type: 'string',
-    required: true,
-  })
-  centrosId: string;
-
   @property({
     type: 'string',
     required: true,
@@ -51,6 +45,8 @@ export class Historial extends Entity {
   })
   descripcion: string;
 
+  @belongsTo(() => Centros)
+  centrosId: string;
 
   constructor(data?: Partial<Historial>) {
     super(data);

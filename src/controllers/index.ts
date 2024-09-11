@@ -6,3 +6,8 @@ export * from './historial.controller';
 export * from './inventario.controller';
 export * from './moduloeducativo.controller';
 export * from './notificaciones.controller';
+export * from './usuarios-citas.controller';
+export * from './citas-centros.controller';
+export * from './historial-centros.controller';
+export * from './centros-inventario.controller';
+export * from './usuarios-notificaciones.controller';
