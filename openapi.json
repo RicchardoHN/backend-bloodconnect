@@ -1,0 +1,5442 @@
+
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "backend-bloodconnect",
+    "version": "0.0.1",
+    "description": "backend-bloodconnect",
+    "contact": {
+      "name": "&lt;RicchardoHN&gt;",
+      "email": "ricchardo_acosta@hotmail.com"
+    }
+  },
+  "paths": {
+    "/centros/count": {
+      "get": {
+        "x-controller-name": "CentrosController",
+        "x-operation-name": "count",
+        "tags": [
+          "CentrosController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Centros model count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Centros.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Centros>"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "CentrosController.count"
+      }
+    },
+    "/centros/{id}/inventario": {
+      "post": {
+        "x-controller-name": "CentrosInventarioController",
+        "x-operation-name": "create",
+        "tags": [
+          "CentrosInventarioController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Centros model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Inventario"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewInventarioInCentros"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "CentrosInventarioController.create"
+      },
+      "patch": {
+        "x-controller-name": "CentrosInventarioController",
+        "x-operation-name": "patch",
+        "tags": [
+          "CentrosInventarioController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Centros.Inventario PATCH success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Inventario.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Inventario>"
+                }
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InventarioPartial"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "CentrosInventarioController.patch"
+      },
+      "get": {
+        "x-controller-name": "CentrosInventarioController",
+        "x-operation-name": "get",
+        "tags": [
+          "CentrosInventarioController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Centros has one Inventario",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Inventario"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "CentrosInventarioController.get"
+      },
+      "delete": {
+        "x-controller-name": "CentrosInventarioController",
+        "x-operation-name": "delete",
+        "tags": [
+          "CentrosInventarioController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Centros.Inventario DELETE success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Inventario.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Inventario>"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "CentrosInventarioController.delete"
+      }
+    },
+    "/centros/{id}": {
+      "put": {
+        "x-controller-name": "CentrosController",
+        "x-operation-name": "replaceById",
+        "tags": [
+          "CentrosController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Centros PUT success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Centros"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "CentrosController.replaceById"
+      },
+      "patch": {
+        "x-controller-name": "CentrosController",
+        "x-operation-name": "updateById",
+        "tags": [
+          "CentrosController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Centros PATCH success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CentrosPartial"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "CentrosController.updateById"
+      },
+      "get": {
+        "x-controller-name": "CentrosController",
+        "x-operation-name": "findById",
+        "tags": [
+          "CentrosController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Centros model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CentrosWithRelations"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Centros.Filter"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "CentrosController.findById"
+      },
+      "delete": {
+        "x-controller-name": "CentrosController",
+        "x-operation-name": "deleteById",
+        "tags": [
+          "CentrosController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Centros DELETE success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "CentrosController.deleteById"
+      }
+    },
+    "/centros": {
+      "post": {
+        "x-controller-name": "CentrosController",
+        "x-operation-name": "create",
+        "tags": [
+          "CentrosController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Centros model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Centros"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewCentros"
+              }
+            }
+          }
+        },
+        "operationId": "CentrosController.create"
+      },
+      "patch": {
+        "x-controller-name": "CentrosController",
+        "x-operation-name": "updateAll",
+        "tags": [
+          "CentrosController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Centros PATCH success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Centros.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Centros>"
+                }
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CentrosPartial"
+              }
+            }
+          }
+        },
+        "operationId": "CentrosController.updateAll"
+      },
+      "get": {
+        "x-controller-name": "CentrosController",
+        "x-operation-name": "find",
+        "tags": [
+          "CentrosController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of Centros model instances",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CentrosWithRelations"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Centros.Filter1"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "CentrosController.find"
+      }
+    },
+    "/citas/count": {
+      "get": {
+        "x-controller-name": "CitasController",
+        "x-operation-name": "count",
+        "tags": [
+          "CitasController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Citas model count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Citas.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Citas>"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "CitasController.count"
+      }
+    },
+    "/citas/{id}/centros": {
+      "get": {
+        "x-controller-name": "CitasCentrosController",
+        "x-operation-name": "getCentros",
+        "tags": [
+          "CitasCentrosController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Centros belonging to Citas",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Centros"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "CitasCentrosController.getCentros"
+      }
+    },
+    "/citas/{id}": {
+      "put": {
+        "x-controller-name": "CitasController",
+        "x-operation-name": "replaceById",
+        "tags": [
+          "CitasController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Citas PUT success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Citas"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "CitasController.replaceById"
+      },
+      "patch": {
+        "x-controller-name": "CitasController",
+        "x-operation-name": "updateById",
+        "tags": [
+          "CitasController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Citas PATCH success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CitasPartial"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "CitasController.updateById"
+      },
+      "get": {
+        "x-controller-name": "CitasController",
+        "x-operation-name": "findById",
+        "tags": [
+          "CitasController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Citas model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CitasWithRelations"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Citas.Filter"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "CitasController.findById"
+      },
+      "delete": {
+        "x-controller-name": "CitasController",
+        "x-operation-name": "deleteById",
+        "tags": [
+          "CitasController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Citas DELETE success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "CitasController.deleteById"
+      }
+    },
+    "/citas": {
+      "post": {
+        "x-controller-name": "CitasController",
+        "x-operation-name": "create",
+        "tags": [
+          "CitasController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Citas model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Citas"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewCitas"
+              }
+            }
+          }
+        },
+        "operationId": "CitasController.create"
+      },
+      "patch": {
+        "x-controller-name": "CitasController",
+        "x-operation-name": "updateAll",
+        "tags": [
+          "CitasController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Citas PATCH success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Citas.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Citas>"
+                }
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CitasPartial"
+              }
+            }
+          }
+        },
+        "operationId": "CitasController.updateAll"
+      },
+      "get": {
+        "x-controller-name": "CitasController",
+        "x-operation-name": "find",
+        "tags": [
+          "CitasController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of Citas model instances",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CitasWithRelations"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Citas.Filter1"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "CitasController.find"
+      }
+    },
+    "/historials/count": {
+      "get": {
+        "x-controller-name": "HistorialController",
+        "x-operation-name": "count",
+        "tags": [
+          "HistorialController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Historial model count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Historial.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Historial>"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "HistorialController.count"
+      }
+    },
+    "/historials/{id}/centros": {
+      "get": {
+        "x-controller-name": "HistorialCentrosController",
+        "x-operation-name": "getCentros",
+        "tags": [
+          "HistorialCentrosController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Centros belonging to Historial",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Centros"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "HistorialCentrosController.getCentros"
+      }
+    },
+    "/historials/{id}": {
+      "put": {
+        "x-controller-name": "HistorialController",
+        "x-operation-name": "replaceById",
+        "tags": [
+          "HistorialController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Historial PUT success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Historial"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "HistorialController.replaceById"
+      },
+      "patch": {
+        "x-controller-name": "HistorialController",
+        "x-operation-name": "updateById",
+        "tags": [
+          "HistorialController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Historial PATCH success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/HistorialPartial"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "HistorialController.updateById"
+      },
+      "get": {
+        "x-controller-name": "HistorialController",
+        "x-operation-name": "findById",
+        "tags": [
+          "HistorialController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Historial model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HistorialWithRelations"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Historial.Filter"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "HistorialController.findById"
+      },
+      "delete": {
+        "x-controller-name": "HistorialController",
+        "x-operation-name": "deleteById",
+        "tags": [
+          "HistorialController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Historial DELETE success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "HistorialController.deleteById"
+      }
+    },
+    "/historials": {
+      "post": {
+        "x-controller-name": "HistorialController",
+        "x-operation-name": "create",
+        "tags": [
+          "HistorialController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Historial model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Historial"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewHistorial"
+              }
+            }
+          }
+        },
+        "operationId": "HistorialController.create"
+      },
+      "patch": {
+        "x-controller-name": "HistorialController",
+        "x-operation-name": "updateAll",
+        "tags": [
+          "HistorialController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Historial PATCH success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Historial.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Historial>"
+                }
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/HistorialPartial"
+              }
+            }
+          }
+        },
+        "operationId": "HistorialController.updateAll"
+      },
+      "get": {
+        "x-controller-name": "HistorialController",
+        "x-operation-name": "find",
+        "tags": [
+          "HistorialController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of Historial model instances",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/HistorialWithRelations"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Historial.Filter1"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "HistorialController.find"
+      }
+    },
+    "/inventarios/count": {
+      "get": {
+        "x-controller-name": "InventarioController",
+        "x-operation-name": "count",
+        "tags": [
+          "InventarioController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Inventario model count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Inventario.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Inventario>"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "InventarioController.count"
+      }
+    },
+    "/inventarios/{id}": {
+      "put": {
+        "x-controller-name": "InventarioController",
+        "x-operation-name": "replaceById",
+        "tags": [
+          "InventarioController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Inventario PUT success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Inventario"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "InventarioController.replaceById"
+      },
+      "patch": {
+        "x-controller-name": "InventarioController",
+        "x-operation-name": "updateById",
+        "tags": [
+          "InventarioController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Inventario PATCH success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InventarioPartial"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "InventarioController.updateById"
+      },
+      "get": {
+        "x-controller-name": "InventarioController",
+        "x-operation-name": "findById",
+        "tags": [
+          "InventarioController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Inventario model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InventarioWithRelations"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Inventario.Filter"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "InventarioController.findById"
+      },
+      "delete": {
+        "x-controller-name": "InventarioController",
+        "x-operation-name": "deleteById",
+        "tags": [
+          "InventarioController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Inventario DELETE success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "InventarioController.deleteById"
+      }
+    },
+    "/inventarios": {
+      "post": {
+        "x-controller-name": "InventarioController",
+        "x-operation-name": "create",
+        "tags": [
+          "InventarioController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Inventario model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Inventario"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewInventario"
+              }
+            }
+          }
+        },
+        "operationId": "InventarioController.create"
+      },
+      "patch": {
+        "x-controller-name": "InventarioController",
+        "x-operation-name": "updateAll",
+        "tags": [
+          "InventarioController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Inventario PATCH success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Inventario.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Inventario>"
+                }
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InventarioPartial"
+              }
+            }
+          }
+        },
+        "operationId": "InventarioController.updateAll"
+      },
+      "get": {
+        "x-controller-name": "InventarioController",
+        "x-operation-name": "find",
+        "tags": [
+          "InventarioController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of Inventario model instances",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/InventarioWithRelations"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Inventario.Filter1"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "InventarioController.find"
+      }
+    },
+    "/modulo-educativos/count": {
+      "get": {
+        "x-controller-name": "ModuloeducativoController",
+        "x-operation-name": "count",
+        "tags": [
+          "ModuloeducativoController"
+        ],
+        "responses": {
+          "200": {
+            "description": "ModuloEducativo model count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "ModuloEducativo.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<ModuloEducativo>"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "ModuloeducativoController.count"
+      }
+    },
+    "/modulo-educativos/{id}": {
+      "put": {
+        "x-controller-name": "ModuloeducativoController",
+        "x-operation-name": "replaceById",
+        "tags": [
+          "ModuloeducativoController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "ModuloEducativo PUT success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ModuloEducativo"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "ModuloeducativoController.replaceById"
+      },
+      "patch": {
+        "x-controller-name": "ModuloeducativoController",
+        "x-operation-name": "updateById",
+        "tags": [
+          "ModuloeducativoController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "ModuloEducativo PATCH success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ModuloEducativoPartial"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "ModuloeducativoController.updateById"
+      },
+      "get": {
+        "x-controller-name": "ModuloeducativoController",
+        "x-operation-name": "findById",
+        "tags": [
+          "ModuloeducativoController"
+        ],
+        "responses": {
+          "200": {
+            "description": "ModuloEducativo model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModuloEducativoWithRelations"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModuloEducativo.Filter"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "ModuloeducativoController.findById"
+      },
+      "delete": {
+        "x-controller-name": "ModuloeducativoController",
+        "x-operation-name": "deleteById",
+        "tags": [
+          "ModuloeducativoController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "ModuloEducativo DELETE success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "ModuloeducativoController.deleteById"
+      }
+    },
+    "/modulo-educativos": {
+      "post": {
+        "x-controller-name": "ModuloeducativoController",
+        "x-operation-name": "create",
+        "tags": [
+          "ModuloeducativoController"
+        ],
+        "responses": {
+          "200": {
+            "description": "ModuloEducativo model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModuloEducativo"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewModuloEducativo"
+              }
+            }
+          }
+        },
+        "operationId": "ModuloeducativoController.create"
+      },
+      "patch": {
+        "x-controller-name": "ModuloeducativoController",
+        "x-operation-name": "updateAll",
+        "tags": [
+          "ModuloeducativoController"
+        ],
+        "responses": {
+          "200": {
+            "description": "ModuloEducativo PATCH success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "ModuloEducativo.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<ModuloEducativo>"
+                }
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ModuloEducativoPartial"
+              }
+            }
+          }
+        },
+        "operationId": "ModuloeducativoController.updateAll"
+      },
+      "get": {
+        "x-controller-name": "ModuloeducativoController",
+        "x-operation-name": "find",
+        "tags": [
+          "ModuloeducativoController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of ModuloEducativo model instances",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ModuloEducativoWithRelations"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModuloEducativo.Filter1"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "ModuloeducativoController.find"
+      }
+    },
+    "/notificaciones/count": {
+      "get": {
+        "x-controller-name": "NotificacionesController",
+        "x-operation-name": "count",
+        "tags": [
+          "NotificacionesController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Notificaciones model count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Notificaciones.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Notificaciones>"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "NotificacionesController.count"
+      }
+    },
+    "/notificaciones/{id}": {
+      "put": {
+        "x-controller-name": "NotificacionesController",
+        "x-operation-name": "replaceById",
+        "tags": [
+          "NotificacionesController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Notificaciones PUT success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Notificaciones"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "NotificacionesController.replaceById"
+      },
+      "patch": {
+        "x-controller-name": "NotificacionesController",
+        "x-operation-name": "updateById",
+        "tags": [
+          "NotificacionesController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Notificaciones PATCH success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificacionesPartial"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "NotificacionesController.updateById"
+      },
+      "get": {
+        "x-controller-name": "NotificacionesController",
+        "x-operation-name": "findById",
+        "tags": [
+          "NotificacionesController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Notificaciones model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificacionesWithRelations"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Notificaciones.Filter"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "NotificacionesController.findById"
+      },
+      "delete": {
+        "x-controller-name": "NotificacionesController",
+        "x-operation-name": "deleteById",
+        "tags": [
+          "NotificacionesController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Notificaciones DELETE success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "NotificacionesController.deleteById"
+      }
+    },
+    "/notificaciones": {
+      "post": {
+        "x-controller-name": "NotificacionesController",
+        "x-operation-name": "create",
+        "tags": [
+          "NotificacionesController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Notificaciones model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Notificaciones"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewNotificaciones"
+              }
+            }
+          }
+        },
+        "operationId": "NotificacionesController.create"
+      },
+      "patch": {
+        "x-controller-name": "NotificacionesController",
+        "x-operation-name": "updateAll",
+        "tags": [
+          "NotificacionesController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Notificaciones PATCH success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Notificaciones.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Notificaciones>"
+                }
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificacionesPartial"
+              }
+            }
+          }
+        },
+        "operationId": "NotificacionesController.updateAll"
+      },
+      "get": {
+        "x-controller-name": "NotificacionesController",
+        "x-operation-name": "find",
+        "tags": [
+          "NotificacionesController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of Notificaciones model instances",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/NotificacionesWithRelations"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Notificaciones.Filter1"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "NotificacionesController.find"
+      }
+    },
+    "/ping": {
+      "get": {
+        "x-controller-name": "PingController",
+        "x-operation-name": "ping",
+        "tags": [
+          "PingController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Ping Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PingResponse"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "PingController.ping"
+      }
+    },
+    "/usuarios/count": {
+      "get": {
+        "x-controller-name": "UsuariosController",
+        "x-operation-name": "count",
+        "tags": [
+          "UsuariosController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Usuarios model count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Usuarios.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Usuarios>"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "UsuariosController.count"
+      }
+    },
+    "/usuarios/{id}/citas": {
+      "post": {
+        "x-controller-name": "UsuariosCitasController",
+        "x-operation-name": "create",
+        "tags": [
+          "UsuariosCitasController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Usuarios model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Citas"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewCitasInUsuarios"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "UsuariosCitasController.create"
+      },
+      "patch": {
+        "x-controller-name": "UsuariosCitasController",
+        "x-operation-name": "patch",
+        "tags": [
+          "UsuariosCitasController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Usuarios.Citas PATCH success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Citas.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Citas>"
+                }
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CitasPartial"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "UsuariosCitasController.patch"
+      },
+      "get": {
+        "x-controller-name": "UsuariosCitasController",
+        "x-operation-name": "find",
+        "tags": [
+          "UsuariosCitasController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of Usuarios has many Citas",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Citas"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "UsuariosCitasController.find"
+      },
+      "delete": {
+        "x-controller-name": "UsuariosCitasController",
+        "x-operation-name": "delete",
+        "tags": [
+          "UsuariosCitasController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Usuarios.Citas DELETE success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Citas.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Citas>"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "UsuariosCitasController.delete"
+      }
+    },
+    "/usuarios/{id}/notificaciones": {
+      "post": {
+        "x-controller-name": "UsuariosNotificacionesController",
+        "x-operation-name": "create",
+        "tags": [
+          "UsuariosNotificacionesController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Usuarios model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Notificaciones"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewNotificacionesInUsuarios"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "UsuariosNotificacionesController.create"
+      },
+      "patch": {
+        "x-controller-name": "UsuariosNotificacionesController",
+        "x-operation-name": "patch",
+        "tags": [
+          "UsuariosNotificacionesController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Usuarios.Notificaciones PATCH success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Notificaciones.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Notificaciones>"
+                }
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NotificacionesPartial"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "UsuariosNotificacionesController.patch"
+      },
+      "get": {
+        "x-controller-name": "UsuariosNotificacionesController",
+        "x-operation-name": "find",
+        "tags": [
+          "UsuariosNotificacionesController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of Usuarios has many Notificaciones",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Notificaciones"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "UsuariosNotificacionesController.find"
+      },
+      "delete": {
+        "x-controller-name": "UsuariosNotificacionesController",
+        "x-operation-name": "delete",
+        "tags": [
+          "UsuariosNotificacionesController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Usuarios.Notificaciones DELETE success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Notificaciones.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Notificaciones>"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "UsuariosNotificacionesController.delete"
+      }
+    },
+    "/usuarios/{id}": {
+      "put": {
+        "x-controller-name": "UsuariosController",
+        "x-operation-name": "replaceById",
+        "tags": [
+          "UsuariosController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Usuarios PUT success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Usuarios"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "UsuariosController.replaceById"
+      },
+      "patch": {
+        "x-controller-name": "UsuariosController",
+        "x-operation-name": "updateById",
+        "tags": [
+          "UsuariosController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Usuarios PATCH success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UsuariosPartial"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "UsuariosController.updateById"
+      },
+      "get": {
+        "x-controller-name": "UsuariosController",
+        "x-operation-name": "findById",
+        "tags": [
+          "UsuariosController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Usuarios model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UsuariosWithRelations"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Usuarios.Filter"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "UsuariosController.findById"
+      },
+      "delete": {
+        "x-controller-name": "UsuariosController",
+        "x-operation-name": "deleteById",
+        "tags": [
+          "UsuariosController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Usuarios DELETE success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "UsuariosController.deleteById"
+      }
+    },
+    "/usuarios": {
+      "post": {
+        "x-controller-name": "UsuariosController",
+        "x-operation-name": "create",
+        "tags": [
+          "UsuariosController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Usuarios model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Usuarios"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewUsuarios"
+              }
+            }
+          }
+        },
+        "operationId": "UsuariosController.create"
+      },
+      "patch": {
+        "x-controller-name": "UsuariosController",
+        "x-operation-name": "updateAll",
+        "tags": [
+          "UsuariosController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Usuarios PATCH success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Usuarios.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Usuarios>"
+                }
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UsuariosPartial"
+              }
+            }
+          }
+        },
+        "operationId": "UsuariosController.updateAll"
+      },
+      "get": {
+        "x-controller-name": "UsuariosController",
+        "x-operation-name": "find",
+        "tags": [
+          "UsuariosController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of Usuarios model instances",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/UsuariosWithRelations"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Usuarios.Filter1"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "UsuariosController.find"
+      }
+    }
+  },
+  "servers": [
+    {
+      "url": "/"
+    }
+  ],
+  "components": {
+    "schemas": {
+      "Usuarios": {
+        "title": "Usuarios",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "nombre": {
+            "type": "string"
+          },
+          "apellido": {
+            "type": "string"
+          },
+          "correo": {
+            "type": "string"
+          },
+          "celular": {
+            "type": "string"
+          },
+          "direccion": {
+            "type": "string"
+          },
+          "tipoSangre": {
+            "type": "string"
+          },
+          "rol": {
+            "type": "string"
+          },
+          "fechaRegistro": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "nombre",
+          "apellido",
+          "correo",
+          "celular",
+          "direccion",
+          "tipoSangre",
+          "rol",
+          "fechaRegistro"
+        ],
+        "additionalProperties": false
+      },
+      "NewUsuarios": {
+        "title": "NewUsuarios",
+        "type": "object",
+        "description": "(tsType: Omit<Usuarios, 'id'>, schemaOptions: { title: 'NewUsuarios', exclude: [ 'id' ] })",
+        "properties": {
+          "nombre": {
+            "type": "string"
+          },
+          "apellido": {
+            "type": "string"
+          },
+          "correo": {
+            "type": "string"
+          },
+          "celular": {
+            "type": "string"
+          },
+          "direccion": {
+            "type": "string"
+          },
+          "tipoSangre": {
+            "type": "string"
+          },
+          "rol": {
+            "type": "string"
+          },
+          "fechaRegistro": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "nombre",
+          "apellido",
+          "correo",
+          "celular",
+          "direccion",
+          "tipoSangre",
+          "rol",
+          "fechaRegistro"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "Omit<Usuarios, 'id'>"
+      },
+      "InventarioWithRelations": {
+        "title": "InventarioWithRelations",
+        "type": "object",
+        "description": "(tsType: InventarioWithRelations, schemaOptions: { includeRelations: true })",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "centrosId": {
+            "type": "string"
+          },
+          "tipoSangre": {
+            "type": "string"
+          },
+          "cantidad": {
+            "type": "number"
+          },
+          "fechaUltimaActualizacion": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "centrosId",
+          "tipoSangre",
+          "cantidad",
+          "fechaUltimaActualizacion"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "InventarioWithRelations"
+      },
+      "CentrosWithRelations": {
+        "title": "CentrosWithRelations",
+        "type": "object",
+        "description": "(tsType: CentrosWithRelations, schemaOptions: { includeRelations: true })",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "nombreCentro": {
+            "type": "string"
+          },
+          "direccion": {
+            "type": "string"
+          },
+          "telefono": {
+            "type": "string"
+          },
+          "correo": {
+            "type": "string"
+          },
+          "horarioAtencion": {
+            "type": "string"
+          },
+          "ubicacion": {
+            "type": "object"
+          },
+          "inventario": {
+            "$ref": "#/components/schemas/InventarioWithRelations"
+          }
+        },
+        "required": [
+          "nombreCentro",
+          "direccion",
+          "telefono",
+          "correo",
+          "horarioAtencion",
+          "ubicacion"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "CentrosWithRelations"
+      },
+      "CitasWithRelations": {
+        "title": "CitasWithRelations",
+        "type": "object",
+        "description": "(tsType: CitasWithRelations, schemaOptions: { includeRelations: true })",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "usuariosId": {
+            "type": "string"
+          },
+          "fecha": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "hora": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "estado": {
+            "type": "string"
+          },
+          "centrosId": {
+            "type": "string"
+          },
+          "centros": {
+            "$ref": "#/components/schemas/CentrosWithRelations"
+          },
+          "foreignKey": {}
+        },
+        "required": [
+          "usuariosId",
+          "fecha",
+          "hora",
+          "estado"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "CitasWithRelations"
+      },
+      "NotificacionesWithRelations": {
+        "title": "NotificacionesWithRelations",
+        "type": "object",
+        "description": "(tsType: NotificacionesWithRelations, schemaOptions: { includeRelations: true })",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "usuariosId": {
+            "type": "string"
+          },
+          "mensaje": {
+            "type": "string"
+          },
+          "fechaEnvio": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "tipo": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "usuariosId",
+          "mensaje",
+          "fechaEnvio",
+          "tipo"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "NotificacionesWithRelations"
+      },
+      "UsuariosWithRelations": {
+        "title": "UsuariosWithRelations",
+        "type": "object",
+        "description": "(tsType: UsuariosWithRelations, schemaOptions: { includeRelations: true })",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "nombre": {
+            "type": "string"
+          },
+          "apellido": {
+            "type": "string"
+          },
+          "correo": {
+            "type": "string"
+          },
+          "celular": {
+            "type": "string"
+          },
+          "direccion": {
+            "type": "string"
+          },
+          "tipoSangre": {
+            "type": "string"
+          },
+          "rol": {
+            "type": "string"
+          },
+          "fechaRegistro": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "citas": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CitasWithRelations"
+            }
+          },
+          "notificaciones": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/NotificacionesWithRelations"
+            }
+          }
+        },
+        "required": [
+          "nombre",
+          "apellido",
+          "correo",
+          "celular",
+          "direccion",
+          "tipoSangre",
+          "rol",
+          "fechaRegistro"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "UsuariosWithRelations"
+      },
+      "UsuariosPartial": {
+        "title": "UsuariosPartial",
+        "type": "object",
+        "description": "(tsType: Partial<Usuarios>, schemaOptions: { partial: true })",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "nombre": {
+            "type": "string"
+          },
+          "apellido": {
+            "type": "string"
+          },
+          "correo": {
+            "type": "string"
+          },
+          "celular": {
+            "type": "string"
+          },
+          "direccion": {
+            "type": "string"
+          },
+          "tipoSangre": {
+            "type": "string"
+          },
+          "rol": {
+            "type": "string"
+          },
+          "fechaRegistro": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "Partial<Usuarios>"
+      },
+      "Notificaciones": {
+        "title": "Notificaciones",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "usuariosId": {
+            "type": "string"
+          },
+          "mensaje": {
+            "type": "string"
+          },
+          "fechaEnvio": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "tipo": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "usuariosId",
+          "mensaje",
+          "fechaEnvio",
+          "tipo"
+        ],
+        "additionalProperties": false
+      },
+      "NewNotificacionesInUsuarios": {
+        "title": "NewNotificacionesInUsuarios",
+        "type": "object",
+        "description": "(tsType: @loopback/repository-json-schema#Optional<Omit<Notificaciones, 'id'>, 'usuariosId'>, schemaOptions: { title: 'NewNotificacionesInUsuarios', exclude: [ 'id' ], optional: [ 'usuariosId' ] })",
+        "properties": {
+          "usuariosId": {
+            "type": "string"
+          },
+          "mensaje": {
+            "type": "string"
+          },
+          "fechaEnvio": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "tipo": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "mensaje",
+          "fechaEnvio",
+          "tipo"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository-json-schema#Optional<Omit<Notificaciones, 'id'>, 'usuariosId'>"
+      },
+      "NotificacionesPartial": {
+        "title": "NotificacionesPartial",
+        "type": "object",
+        "description": "(tsType: Partial<Notificaciones>, schemaOptions: { partial: true })",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "usuariosId": {
+            "type": "string"
+          },
+          "mensaje": {
+            "type": "string"
+          },
+          "fechaEnvio": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "tipo": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "Partial<Notificaciones>"
+      },
+      "Citas": {
+        "title": "Citas",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "usuariosId": {
+            "type": "string"
+          },
+          "fecha": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "hora": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "estado": {
+            "type": "string"
+          },
+          "centrosId": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "usuariosId",
+          "fecha",
+          "hora",
+          "estado"
+        ],
+        "additionalProperties": false
+      },
+      "NewCitasInUsuarios": {
+        "title": "NewCitasInUsuarios",
+        "type": "object",
+        "description": "(tsType: @loopback/repository-json-schema#Optional<Omit<Citas, 'id'>, 'usuariosId'>, schemaOptions: { title: 'NewCitasInUsuarios', exclude: [ 'id' ], optional: [ 'usuariosId' ] })",
+        "properties": {
+          "usuariosId": {
+            "type": "string"
+          },
+          "fecha": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "hora": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "estado": {
+            "type": "string"
+          },
+          "centrosId": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "fecha",
+          "hora",
+          "estado"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository-json-schema#Optional<Omit<Citas, 'id'>, 'usuariosId'>"
+      },
+      "CitasPartial": {
+        "title": "CitasPartial",
+        "type": "object",
+        "description": "(tsType: Partial<Citas>, schemaOptions: { partial: true })",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "usuariosId": {
+            "type": "string"
+          },
+          "fecha": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "hora": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "estado": {
+            "type": "string"
+          },
+          "centrosId": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "Partial<Citas>"
+      },
+      "NewNotificaciones": {
+        "title": "NewNotificaciones",
+        "type": "object",
+        "description": "(tsType: Omit<Notificaciones, 'id'>, schemaOptions: { title: 'NewNotificaciones', exclude: [ 'id' ] })",
+        "properties": {
+          "usuariosId": {
+            "type": "string"
+          },
+          "mensaje": {
+            "type": "string"
+          },
+          "fechaEnvio": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "tipo": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "usuariosId",
+          "mensaje",
+          "fechaEnvio",
+          "tipo"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "Omit<Notificaciones, 'id'>"
+      },
+      "ModuloEducativo": {
+        "title": "ModuloEducativo",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "titulo": {
+            "type": "string"
+          },
+          "contenido": {
+            "type": "string"
+          },
+          "fechaPublicacion": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "categoria": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "titulo",
+          "contenido",
+          "fechaPublicacion",
+          "categoria"
+        ],
+        "additionalProperties": false
+      },
+      "NewModuloEducativo": {
+        "title": "NewModuloEducativo",
+        "type": "object",
+        "description": "(tsType: Omit<ModuloEducativo, 'id'>, schemaOptions: { title: 'NewModuloEducativo', exclude: [ 'id' ] })",
+        "properties": {
+          "titulo": {
+            "type": "string"
+          },
+          "contenido": {
+            "type": "string"
+          },
+          "fechaPublicacion": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "categoria": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "titulo",
+          "contenido",
+          "fechaPublicacion",
+          "categoria"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "Omit<ModuloEducativo, 'id'>"
+      },
+      "ModuloEducativoWithRelations": {
+        "title": "ModuloEducativoWithRelations",
+        "type": "object",
+        "description": "(tsType: ModuloEducativoWithRelations, schemaOptions: { includeRelations: true })",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "titulo": {
+            "type": "string"
+          },
+          "contenido": {
+            "type": "string"
+          },
+          "fechaPublicacion": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "categoria": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "titulo",
+          "contenido",
+          "fechaPublicacion",
+          "categoria"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "ModuloEducativoWithRelations"
+      },
+      "ModuloEducativoPartial": {
+        "title": "ModuloEducativoPartial",
+        "type": "object",
+        "description": "(tsType: Partial<ModuloEducativo>, schemaOptions: { partial: true })",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "titulo": {
+            "type": "string"
+          },
+          "contenido": {
+            "type": "string"
+          },
+          "fechaPublicacion": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "categoria": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "Partial<ModuloEducativo>"
+      },
+      "Inventario": {
+        "title": "Inventario",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "centrosId": {
+            "type": "string"
+          },
+          "tipoSangre": {
+            "type": "string"
+          },
+          "cantidad": {
+            "type": "number"
+          },
+          "fechaUltimaActualizacion": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "centrosId",
+          "tipoSangre",
+          "cantidad",
+          "fechaUltimaActualizacion"
+        ],
+        "additionalProperties": false
+      },
+      "NewInventario": {
+        "title": "NewInventario",
+        "type": "object",
+        "description": "(tsType: Omit<Inventario, 'id'>, schemaOptions: { title: 'NewInventario', exclude: [ 'id' ] })",
+        "properties": {
+          "centrosId": {
+            "type": "string"
+          },
+          "tipoSangre": {
+            "type": "string"
+          },
+          "cantidad": {
+            "type": "number"
+          },
+          "fechaUltimaActualizacion": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "centrosId",
+          "tipoSangre",
+          "cantidad",
+          "fechaUltimaActualizacion"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "Omit<Inventario, 'id'>"
+      },
+      "InventarioPartial": {
+        "title": "InventarioPartial",
+        "type": "object",
+        "description": "(tsType: Partial<Inventario>, schemaOptions: { partial: true })",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "centrosId": {
+            "type": "string"
+          },
+          "tipoSangre": {
+            "type": "string"
+          },
+          "cantidad": {
+            "type": "number"
+          },
+          "fechaUltimaActualizacion": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "Partial<Inventario>"
+      },
+      "Historial": {
+        "title": "Historial",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "usuariosId": {
+            "type": "string"
+          },
+          "tipoMovimiento": {
+            "type": "string"
+          },
+          "tipoSangre": {
+            "type": "string"
+          },
+          "cantidad": {
+            "type": "number"
+          },
+          "fecha": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "descripcion": {
+            "type": "string"
+          },
+          "centrosId": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "usuariosId",
+          "tipoMovimiento",
+          "tipoSangre",
+          "cantidad",
+          "fecha",
+          "descripcion"
+        ],
+        "additionalProperties": false
+      },
+      "NewHistorial": {
+        "title": "NewHistorial",
+        "type": "object",
+        "description": "(tsType: Omit<Historial, 'id'>, schemaOptions: { title: 'NewHistorial', exclude: [ 'id' ] })",
+        "properties": {
+          "usuariosId": {
+            "type": "string"
+          },
+          "tipoMovimiento": {
+            "type": "string"
+          },
+          "tipoSangre": {
+            "type": "string"
+          },
+          "cantidad": {
+            "type": "number"
+          },
+          "fecha": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "descripcion": {
+            "type": "string"
+          },
+          "centrosId": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "usuariosId",
+          "tipoMovimiento",
+          "tipoSangre",
+          "cantidad",
+          "fecha",
+          "descripcion"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "Omit<Historial, 'id'>"
+      },
+      "HistorialWithRelations": {
+        "title": "HistorialWithRelations",
+        "type": "object",
+        "description": "(tsType: HistorialWithRelations, schemaOptions: { includeRelations: true })",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "usuariosId": {
+            "type": "string"
+          },
+          "tipoMovimiento": {
+            "type": "string"
+          },
+          "tipoSangre": {
+            "type": "string"
+          },
+          "cantidad": {
+            "type": "number"
+          },
+          "fecha": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "descripcion": {
+            "type": "string"
+          },
+          "centrosId": {
+            "type": "string"
+          },
+          "centros": {
+            "$ref": "#/components/schemas/CentrosWithRelations"
+          },
+          "foreignKey": {}
+        },
+        "required": [
+          "usuariosId",
+          "tipoMovimiento",
+          "tipoSangre",
+          "cantidad",
+          "fecha",
+          "descripcion"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "HistorialWithRelations"
+      },
+      "HistorialPartial": {
+        "title": "HistorialPartial",
+        "type": "object",
+        "description": "(tsType: Partial<Historial>, schemaOptions: { partial: true })",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "usuariosId": {
+            "type": "string"
+          },
+          "tipoMovimiento": {
+            "type": "string"
+          },
+          "tipoSangre": {
+            "type": "string"
+          },
+          "cantidad": {
+            "type": "number"
+          },
+          "fecha": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "descripcion": {
+            "type": "string"
+          },
+          "centrosId": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "Partial<Historial>"
+      },
+      "Centros": {
+        "title": "Centros",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "nombreCentro": {
+            "type": "string"
+          },
+          "direccion": {
+            "type": "string"
+          },
+          "telefono": {
+            "type": "string"
+          },
+          "correo": {
+            "type": "string"
+          },
+          "horarioAtencion": {
+            "type": "string"
+          },
+          "ubicacion": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "nombreCentro",
+          "direccion",
+          "telefono",
+          "correo",
+          "horarioAtencion",
+          "ubicacion"
+        ],
+        "additionalProperties": false
+      },
+      "NewCitas": {
+        "title": "NewCitas",
+        "type": "object",
+        "description": "(tsType: Omit<Citas, 'id'>, schemaOptions: { title: 'NewCitas', exclude: [ 'id' ] })",
+        "properties": {
+          "usuariosId": {
+            "type": "string"
+          },
+          "fecha": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "hora": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "estado": {
+            "type": "string"
+          },
+          "centrosId": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "usuariosId",
+          "fecha",
+          "hora",
+          "estado"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "Omit<Citas, 'id'>"
+      },
+      "NewCentros": {
+        "title": "NewCentros",
+        "type": "object",
+        "description": "(tsType: Omit<Centros, 'id'>, schemaOptions: { title: 'NewCentros', exclude: [ 'id' ] })",
+        "properties": {
+          "nombreCentro": {
+            "type": "string"
+          },
+          "direccion": {
+            "type": "string"
+          },
+          "telefono": {
+            "type": "string"
+          },
+          "correo": {
+            "type": "string"
+          },
+          "horarioAtencion": {
+            "type": "string"
+          },
+          "ubicacion": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "nombreCentro",
+          "direccion",
+          "telefono",
+          "correo",
+          "horarioAtencion",
+          "ubicacion"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "Omit<Centros, 'id'>"
+      },
+      "CentrosPartial": {
+        "title": "CentrosPartial",
+        "type": "object",
+        "description": "(tsType: Partial<Centros>, schemaOptions: { partial: true })",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "nombreCentro": {
+            "type": "string"
+          },
+          "direccion": {
+            "type": "string"
+          },
+          "telefono": {
+            "type": "string"
+          },
+          "correo": {
+            "type": "string"
+          },
+          "horarioAtencion": {
+            "type": "string"
+          },
+          "ubicacion": {
+            "type": "object"
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "Partial<Centros>"
+      },
+      "NewInventarioInCentros": {
+        "title": "NewInventarioInCentros",
+        "type": "object",
+        "description": "(tsType: @loopback/repository-json-schema#Optional<Omit<Inventario, 'id'>, 'centrosId'>, schemaOptions: { title: 'NewInventarioInCentros', exclude: [ 'id' ], optional: [ 'centrosId' ] })",
+        "properties": {
+          "centrosId": {
+            "type": "string"
+          },
+          "tipoSangre": {
+            "type": "string"
+          },
+          "cantidad": {
+            "type": "number"
+          },
+          "fechaUltimaActualizacion": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "tipoSangre",
+          "cantidad",
+          "fechaUltimaActualizacion"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository-json-schema#Optional<Omit<Inventario, 'id'>, 'centrosId'>"
+      },
+      "loopback.Count": {
+        "type": "object",
+        "title": "loopback.Count",
+        "x-typescript-type": "@loopback/repository#Count",
+        "properties": {
+          "count": {
+            "type": "number"
+          }
+        }
+      },
+      "Centros.ScopeFilter": {
+        "type": "object",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "where": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {},
+                "additionalProperties": true
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "uniqueItems": true
+              }
+            ]
+          },
+          "include": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {},
+              "additionalProperties": true
+            }
+          }
+        },
+        "additionalProperties": false,
+        "title": "Centros.ScopeFilter"
+      },
+      "Centros.IncludeFilter.Items": {
+        "title": "Centros.IncludeFilter.Items",
+        "type": "object",
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "inventario"
+            ]
+          },
+          "scope": {
+            "$ref": "#/components/schemas/Centros.ScopeFilter"
+          }
+        }
+      },
+      "Centros.Filter": {
+        "type": "object",
+        "title": "Centros.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "nombreCentro": {
+                    "type": "boolean"
+                  },
+                  "direccion": {
+                    "type": "boolean"
+                  },
+                  "telefono": {
+                    "type": "boolean"
+                  },
+                  "correo": {
+                    "type": "boolean"
+                  },
+                  "horarioAtencion": {
+                    "type": "boolean"
+                  },
+                  "ubicacion": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "id",
+                    "nombreCentro",
+                    "direccion",
+                    "telefono",
+                    "correo",
+                    "horarioAtencion",
+                    "ubicacion"
+                  ],
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "Centros.Fields"
+          },
+          "include": {
+            "title": "Centros.IncludeFilter",
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/Centros.IncludeFilter.Items"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<Centros>"
+      },
+      "Centros.Filter1": {
+        "type": "object",
+        "title": "Centros.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "where": {
+            "title": "Centros.WhereFilter",
+            "type": "object",
+            "additionalProperties": true
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "nombreCentro": {
+                    "type": "boolean"
+                  },
+                  "direccion": {
+                    "type": "boolean"
+                  },
+                  "telefono": {
+                    "type": "boolean"
+                  },
+                  "correo": {
+                    "type": "boolean"
+                  },
+                  "horarioAtencion": {
+                    "type": "boolean"
+                  },
+                  "ubicacion": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "id",
+                    "nombreCentro",
+                    "direccion",
+                    "telefono",
+                    "correo",
+                    "horarioAtencion",
+                    "ubicacion"
+                  ],
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "Centros.Fields"
+          },
+          "include": {
+            "title": "Centros.IncludeFilter",
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/Centros.IncludeFilter.Items"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<Centros>"
+      },
+      "Citas.ScopeFilter": {
+        "type": "object",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "where": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {},
+                "additionalProperties": true
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "uniqueItems": true
+              }
+            ]
+          },
+          "include": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {},
+              "additionalProperties": true
+            }
+          }
+        },
+        "additionalProperties": false,
+        "title": "Citas.ScopeFilter"
+      },
+      "Citas.IncludeFilter.Items": {
+        "title": "Citas.IncludeFilter.Items",
+        "type": "object",
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "centros"
+            ]
+          },
+          "scope": {
+            "$ref": "#/components/schemas/Citas.ScopeFilter"
+          }
+        }
+      },
+      "Citas.Filter": {
+        "type": "object",
+        "title": "Citas.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "usuariosId": {
+                    "type": "boolean"
+                  },
+                  "fecha": {
+                    "type": "boolean"
+                  },
+                  "hora": {
+                    "type": "boolean"
+                  },
+                  "estado": {
+                    "type": "boolean"
+                  },
+                  "centrosId": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "id",
+                    "usuariosId",
+                    "fecha",
+                    "hora",
+                    "estado",
+                    "centrosId"
+                  ],
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "Citas.Fields"
+          },
+          "include": {
+            "title": "Citas.IncludeFilter",
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/Citas.IncludeFilter.Items"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<Citas>"
+      },
+      "Citas.Filter1": {
+        "type": "object",
+        "title": "Citas.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "where": {
+            "title": "Citas.WhereFilter",
+            "type": "object",
+            "additionalProperties": true
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "usuariosId": {
+                    "type": "boolean"
+                  },
+                  "fecha": {
+                    "type": "boolean"
+                  },
+                  "hora": {
+                    "type": "boolean"
+                  },
+                  "estado": {
+                    "type": "boolean"
+                  },
+                  "centrosId": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "id",
+                    "usuariosId",
+                    "fecha",
+                    "hora",
+                    "estado",
+                    "centrosId"
+                  ],
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "Citas.Fields"
+          },
+          "include": {
+            "title": "Citas.IncludeFilter",
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/Citas.IncludeFilter.Items"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<Citas>"
+      },
+      "Historial.ScopeFilter": {
+        "type": "object",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "where": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {},
+                "additionalProperties": true
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "uniqueItems": true
+              }
+            ]
+          },
+          "include": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {},
+              "additionalProperties": true
+            }
+          }
+        },
+        "additionalProperties": false,
+        "title": "Historial.ScopeFilter"
+      },
+      "Historial.IncludeFilter.Items": {
+        "title": "Historial.IncludeFilter.Items",
+        "type": "object",
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "centros"
+            ]
+          },
+          "scope": {
+            "$ref": "#/components/schemas/Historial.ScopeFilter"
+          }
+        }
+      },
+      "Historial.Filter": {
+        "type": "object",
+        "title": "Historial.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "usuariosId": {
+                    "type": "boolean"
+                  },
+                  "tipoMovimiento": {
+                    "type": "boolean"
+                  },
+                  "tipoSangre": {
+                    "type": "boolean"
+                  },
+                  "cantidad": {
+                    "type": "boolean"
+                  },
+                  "fecha": {
+                    "type": "boolean"
+                  },
+                  "descripcion": {
+                    "type": "boolean"
+                  },
+                  "centrosId": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "id",
+                    "usuariosId",
+                    "tipoMovimiento",
+                    "tipoSangre",
+                    "cantidad",
+                    "fecha",
+                    "descripcion",
+                    "centrosId"
+                  ],
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "Historial.Fields"
+          },
+          "include": {
+            "title": "Historial.IncludeFilter",
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/Historial.IncludeFilter.Items"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<Historial>"
+      },
+      "Historial.Filter1": {
+        "type": "object",
+        "title": "Historial.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "where": {
+            "title": "Historial.WhereFilter",
+            "type": "object",
+            "additionalProperties": true
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "usuariosId": {
+                    "type": "boolean"
+                  },
+                  "tipoMovimiento": {
+                    "type": "boolean"
+                  },
+                  "tipoSangre": {
+                    "type": "boolean"
+                  },
+                  "cantidad": {
+                    "type": "boolean"
+                  },
+                  "fecha": {
+                    "type": "boolean"
+                  },
+                  "descripcion": {
+                    "type": "boolean"
+                  },
+                  "centrosId": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "id",
+                    "usuariosId",
+                    "tipoMovimiento",
+                    "tipoSangre",
+                    "cantidad",
+                    "fecha",
+                    "descripcion",
+                    "centrosId"
+                  ],
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "Historial.Fields"
+          },
+          "include": {
+            "title": "Historial.IncludeFilter",
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/Historial.IncludeFilter.Items"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<Historial>"
+      },
+      "Inventario.Filter": {
+        "type": "object",
+        "title": "Inventario.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "centrosId": {
+                    "type": "boolean"
+                  },
+                  "tipoSangre": {
+                    "type": "boolean"
+                  },
+                  "cantidad": {
+                    "type": "boolean"
+                  },
+                  "fechaUltimaActualizacion": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "id",
+                    "centrosId",
+                    "tipoSangre",
+                    "cantidad",
+                    "fechaUltimaActualizacion"
+                  ],
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "Inventario.Fields"
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<Inventario>"
+      },
+      "Inventario.Filter1": {
+        "type": "object",
+        "title": "Inventario.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "where": {
+            "title": "Inventario.WhereFilter",
+            "type": "object",
+            "additionalProperties": true
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "centrosId": {
+                    "type": "boolean"
+                  },
+                  "tipoSangre": {
+                    "type": "boolean"
+                  },
+                  "cantidad": {
+                    "type": "boolean"
+                  },
+                  "fechaUltimaActualizacion": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "id",
+                    "centrosId",
+                    "tipoSangre",
+                    "cantidad",
+                    "fechaUltimaActualizacion"
+                  ],
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "Inventario.Fields"
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<Inventario>"
+      },
+      "ModuloEducativo.Filter": {
+        "type": "object",
+        "title": "ModuloEducativo.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "titulo": {
+                    "type": "boolean"
+                  },
+                  "contenido": {
+                    "type": "boolean"
+                  },
+                  "fechaPublicacion": {
+                    "type": "boolean"
+                  },
+                  "categoria": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "id",
+                    "titulo",
+                    "contenido",
+                    "fechaPublicacion",
+                    "categoria"
+                  ],
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "ModuloEducativo.Fields"
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<ModuloEducativo>"
+      },
+      "ModuloEducativo.Filter1": {
+        "type": "object",
+        "title": "ModuloEducativo.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "where": {
+            "title": "ModuloEducativo.WhereFilter",
+            "type": "object",
+            "additionalProperties": true
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "titulo": {
+                    "type": "boolean"
+                  },
+                  "contenido": {
+                    "type": "boolean"
+                  },
+                  "fechaPublicacion": {
+                    "type": "boolean"
+                  },
+                  "categoria": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "id",
+                    "titulo",
+                    "contenido",
+                    "fechaPublicacion",
+                    "categoria"
+                  ],
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "ModuloEducativo.Fields"
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<ModuloEducativo>"
+      },
+      "Notificaciones.Filter": {
+        "type": "object",
+        "title": "Notificaciones.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "usuariosId": {
+                    "type": "boolean"
+                  },
+                  "mensaje": {
+                    "type": "boolean"
+                  },
+                  "fechaEnvio": {
+                    "type": "boolean"
+                  },
+                  "tipo": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "id",
+                    "usuariosId",
+                    "mensaje",
+                    "fechaEnvio",
+                    "tipo"
+                  ],
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "Notificaciones.Fields"
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<Notificaciones>"
+      },
+      "Notificaciones.Filter1": {
+        "type": "object",
+        "title": "Notificaciones.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "where": {
+            "title": "Notificaciones.WhereFilter",
+            "type": "object",
+            "additionalProperties": true
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "usuariosId": {
+                    "type": "boolean"
+                  },
+                  "mensaje": {
+                    "type": "boolean"
+                  },
+                  "fechaEnvio": {
+                    "type": "boolean"
+                  },
+                  "tipo": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "id",
+                    "usuariosId",
+                    "mensaje",
+                    "fechaEnvio",
+                    "tipo"
+                  ],
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "Notificaciones.Fields"
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<Notificaciones>"
+      },
+      "PingResponse": {
+        "type": "object",
+        "title": "PingResponse",
+        "properties": {
+          "greeting": {
+            "type": "string"
+          },
+          "date": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "headers": {
+            "type": "object",
+            "properties": {
+              "Content-Type": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": true
+          }
+        }
+      },
+      "Usuarios.ScopeFilter": {
+        "type": "object",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "where": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {},
+                "additionalProperties": true
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "uniqueItems": true
+              }
+            ]
+          },
+          "include": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {},
+              "additionalProperties": true
+            }
+          }
+        },
+        "additionalProperties": false,
+        "title": "Usuarios.ScopeFilter"
+      },
+      "Usuarios.IncludeFilter.Items": {
+        "title": "Usuarios.IncludeFilter.Items",
+        "type": "object",
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "citas",
+              "notificaciones"
+            ]
+          },
+          "scope": {
+            "$ref": "#/components/schemas/Usuarios.ScopeFilter"
+          }
+        }
+      },
+      "Usuarios.Filter": {
+        "type": "object",
+        "title": "Usuarios.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "nombre": {
+                    "type": "boolean"
+                  },
+                  "apellido": {
+                    "type": "boolean"
+                  },
+                  "correo": {
+                    "type": "boolean"
+                  },
+                  "celular": {
+                    "type": "boolean"
+                  },
+                  "direccion": {
+                    "type": "boolean"
+                  },
+                  "tipoSangre": {
+                    "type": "boolean"
+                  },
+                  "rol": {
+                    "type": "boolean"
+                  },
+                  "fechaRegistro": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "id",
+                    "nombre",
+                    "apellido",
+                    "correo",
+                    "celular",
+                    "direccion",
+                    "tipoSangre",
+                    "rol",
+                    "fechaRegistro"
+                  ],
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "Usuarios.Fields"
+          },
+          "include": {
+            "title": "Usuarios.IncludeFilter",
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/Usuarios.IncludeFilter.Items"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<Usuarios>"
+      },
+      "Usuarios.Filter1": {
+        "type": "object",
+        "title": "Usuarios.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "where": {
+            "title": "Usuarios.WhereFilter",
+            "type": "object",
+            "additionalProperties": true
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "nombre": {
+                    "type": "boolean"
+                  },
+                  "apellido": {
+                    "type": "boolean"
+                  },
+                  "correo": {
+                    "type": "boolean"
+                  },
+                  "celular": {
+                    "type": "boolean"
+                  },
+                  "direccion": {
+                    "type": "boolean"
+                  },
+                  "tipoSangre": {
+                    "type": "boolean"
+                  },
+                  "rol": {
+                    "type": "boolean"
+                  },
+                  "fechaRegistro": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "id",
+                    "nombre",
+                    "apellido",
+                    "correo",
+                    "celular",
+                    "direccion",
+                    "tipoSangre",
+                    "rol",
+                    "fechaRegistro"
+                  ],
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "Usuarios.Fields"
+          },
+          "include": {
+            "title": "Usuarios.IncludeFilter",
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/Usuarios.IncludeFilter.Items"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<Usuarios>"
+      }
+    }
+  }
+}
